@@ -8,7 +8,7 @@ pipeline {
             agent {
                 docker {
                     label 'Master-Node'
-                    image 'maven:3-alpine'
+                    image 'bibinwilson/jenkins-slave:latest'
                 }
             } 
             steps {
