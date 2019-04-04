@@ -1,6 +1,5 @@
 pipeline {
-    agent {
-        docker none
+    agent none
     options {
         skipStagesAfterUnstable()
     }
