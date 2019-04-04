@@ -8,7 +8,7 @@ pipeline {
             agent {
                 docker {
                     label 'Master-Node'
-                    image 'bibinwilson/jenkins-slave:latest'
+                    image 'jenkinsci/blueocean'
                 }
             } 
             steps {
