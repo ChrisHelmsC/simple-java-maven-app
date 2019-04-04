@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
+                    label 'Master-Node'
                     image 'maven:3-alpine'
                 }
             } 
@@ -18,6 +19,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
+                    label 'Master-Node'
                     image 'maven:3-alpine'
                 }
             }
@@ -33,6 +35,7 @@ pipeline {
         stage('Deliver') {
             agent {
                 docker {
+                    label 'Master-Node'
                     image 'maven:3-alpine'
                 }
             }
