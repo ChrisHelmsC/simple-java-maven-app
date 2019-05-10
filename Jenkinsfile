@@ -1,3 +1,5 @@
+someVar = 'something'
+
 pipeline {
     agent {
         docker {
@@ -7,7 +9,6 @@ pipeline {
     }
     environment {
         testVar = 'A value'
-	someVar = 'one value'
     }
     stages {
         stage('Build') { 
