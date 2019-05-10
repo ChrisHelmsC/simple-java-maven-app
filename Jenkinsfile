@@ -5,10 +5,18 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
+    environment {
+        testVar = 'A value'
+    }
     stages {
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package' 
+            }
+        }
+        stage('Env') {
+            steps {
+                sh 'printenv'
             }
         }
     }
