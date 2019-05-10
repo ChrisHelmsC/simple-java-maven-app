@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        def someVar = 'Another value'
+        someVar = 'Another value'
         testVar = 'A value'
     }
     stages {
