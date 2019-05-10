@@ -1,5 +1,3 @@
-someVar = 'something'
-
 pipeline {
     agent {
         docker {
@@ -15,7 +13,7 @@ pipeline {
             steps {
                 echo 'This is a variable ${testVar}'
 		script {
-                    someVar = 'This has changed'
+                    env.someVar = 'This has changed'
 		} 
             }
         }
