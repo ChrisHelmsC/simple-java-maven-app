@@ -12,7 +12,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'This is a variable ${testVar}' 
+                echo 'This is a variable ${testVar}'
+                someVar = 'This has changed' 
             }
         }
         stage('Env') {
