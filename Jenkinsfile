@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'This is a variable '"${env.testVar}" 
+                echo 'This is a variable '"${env.testVar}'"' 
             }
         }
         stage('Env') {
