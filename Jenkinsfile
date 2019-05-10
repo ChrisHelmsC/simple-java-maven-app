@@ -15,13 +15,14 @@ pipeline {
             steps {
                 echo 'This is a variable ${testVar}'
 		script {
-                    env.someVar = 'This has changed'
+                    someVar = 'This has changed'
 		} 
             }
         }
         stage('Env') {
             steps {
                 sh 'printenv'
+		echo "${someVar}"
             }
         }
     }
