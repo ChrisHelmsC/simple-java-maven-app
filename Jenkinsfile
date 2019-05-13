@@ -26,6 +26,7 @@ pipeline {
         stage('Email') {
     steps {
         script {
+	    echo env.testVar
             def mailRecipients = 'chris.helms.c@gmail.com'
             def jobName = currentBuild.fullDisplayName
             emailext body: '''Something ${ENV, someVar}''',
