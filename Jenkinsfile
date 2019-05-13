@@ -14,6 +14,9 @@ pipeline {
                 echo 'This is a variable ${testVar}'
 		script {
                     env.someVar = 'This has changed'
+                    def scmVars = checkout scm
+                    def commitHash = scmVars.GIT_COMMIT
+                    echo "$commitHash"
 		} 
             }
         }
