@@ -24,18 +24,17 @@ pipeline {
             }
         }
         stage('Email') {
-    steps {
-        script {
-	    echo env.testVar
-            def mailRecipients = 'chris.helms.c@gmail.com'
-            def jobName = currentBuild.fullDisplayName
-            emailext body: '''Something ${ENV, someVar}''',
-            mimeType: 'text/html',
-            subject: "Hello From Jenkins",
-            to: "${mailRecipients}",
-            replyTo: "${mailRecipients}"
+            steps {
+                script {
+                    def mailRecipients = 'chris.helms.c@gmail.com'
+                    def jobName = currentBuild.fullDisplayName
+                    emailext body: 'Something '"${env.someVar}",
+                    mimeType: 'text/html',
+                    subject: "Hello From Jenkins",
+                    to: "${mailRecipients}",
+                    replyTo: "${mailRecipients}"
+                }
+            }
         }
-    }
-}
     }
 }
