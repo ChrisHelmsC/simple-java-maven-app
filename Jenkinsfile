@@ -14,8 +14,7 @@ pipeline {
                 echo 'This is a variable ${testVar}'
 		script {
                     env.someVar = 'This has changed'
-                    def scmVars = checkout scm
-                    echo "$scmVars"
+                    env.branch = checkout(scm).GIT_BRANCH
 		} 
             }
         }
@@ -30,7 +29,7 @@ pipeline {
                 script {
                     def mailRecipients = 'chris.helms.c@gmail.com'
                     def jobName = currentBuild.fullDisplayName
-                    def body = 'Something ' + "${env.someVar}"
+                    def body = 'This is from branch ' + "${env.branch}"
 
                     emailext body: "${body}",
                     mimeType: 'text/html',
