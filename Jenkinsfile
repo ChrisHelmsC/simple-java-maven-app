@@ -26,7 +26,7 @@ pipeline {
         stage('Email') {
     steps {
         script {
-            def mailRecipients = 'dc@xwave.de'
+            def mailRecipients = 'chris.helms.c@gmail.com'
             def jobName = currentBuild.fullDisplayName
             emailext body: '''${SCRIPT, template="groovy-html.template"}''',
             mimeType: 'text/html',
