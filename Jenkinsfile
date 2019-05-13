@@ -28,7 +28,7 @@ pipeline {
         script {
             def mailRecipients = 'chris.helms.c@gmail.com'
             def jobName = currentBuild.fullDisplayName
-            emailext body: 'This is from jenkins',
+            emailext body: '''Something ${ENV, someVar}''',
             mimeType: 'text/html',
             subject: "Hello From Jenkins",
             to: "${mailRecipients}",
