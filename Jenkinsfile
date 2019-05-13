@@ -28,12 +28,11 @@ pipeline {
         script {
             def mailRecipients = 'chris.helms.c@gmail.com'
             def jobName = currentBuild.fullDisplayName
-            emailext body: '''${SCRIPT, template="groovy-html.template"}''',
+            emailext body: 'This is from jenkins',
             mimeType: 'text/html',
-            subject: "[Jenkins] ${jobName}",
+            subject: "Hello From Jenkins",
             to: "${mailRecipients}",
-            replyTo: "${mailRecipients}",
-            recipientProviders: [[$class: 'CulpritsRecipientProvider']]
+            replyTo: "${mailRecipients}"
         }
     }
 }
